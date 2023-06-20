@@ -28,7 +28,7 @@ const Project = ({title, type, img, link, github}:ProjectProps) => {
       whileInView={{y: 0, opacity: 1}}
       transition={{duration: 0.9, delay: 0.4, type: 'spring'}}
       viewport={{once: true}}
-      className='w-full shadow-2xl rounded-3xl p-6 border border-solid border-custom-200 bg-light relative'>
+      className='w-full shadow-2xl rounded-3xl p-6 border border-solid border-custom-200 bg-light relative dark:bg-dark dark:border-custom dark:shadow-none'>
 
       <Link href={link} target='_blank' className='w-full block cursor-pointer overflow-hidden rounded-lg'>
         <Image src={img} alt={title} className='w-full h-auto transition hover:scale-105' />
@@ -74,10 +74,10 @@ const FeaturedProject = ({type, title, summary, img, link, github}: FeaturedProj
       whileInView={{y: 0, opacity: 1}}
       transition={{duration: 0.9, delay: 0.4, type: 'spring'}}
       viewport={{once: true}} 
-      className='w-full flex items-center justify-between rounded-3xl border border-solid border-custom-200 bg-light shadow-2xl p-12'>
+      className='w-full flex items-center justify-between rounded-3xl border border-solid border-custom-200 bg-light shadow-2xl p-12 dark:bg-dark dark:border-custom dark:shadow-none'>
 
       <Link href={link} target='_blank' className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
-        <Image src={img} alt={title} className='w-full h-auto transition hover:scale-105' />
+        <Image src={img} alt={title} className='w-full h-auto transition hover:scale-105' priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" />
       </Link>
 
       <div className='w-1/2 flex flex-col items-start justify-between pl-6 self-start'>
@@ -87,7 +87,7 @@ const FeaturedProject = ({type, title, summary, img, link, github}: FeaturedProj
           <h2 className='my-2 w-full text-left text-4xl font-bold'>{title}</h2>
         </Link>
 
-        <p className='my-2 font-medium text-dark'>{summary}</p>
+        <p className='my-2 font-medium text-dark dark:text-light'>{summary}</p>
 
         <div className='mt-2 w-full flex items-center gap-4'>
           <Link href={github} target='_blank' className='w-10'>

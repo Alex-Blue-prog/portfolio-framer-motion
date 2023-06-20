@@ -46,7 +46,7 @@ const MovingImg = ({title, img, link}: MovingImgProps) => {
       onMouseMove={handleMouse}
       onMouseLeave={handleMouseLeave}
     >
-      <h2 className='capitalize text-lg font-semibold hover:underline'>
+      <h2 className='capitalize text-lg font-semibold hover:underline dark:text-light'>
         {title}
       </h2>
       <FramerImage style={{x: x, y: y}} initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 0.2}}} ref={imgRef} src={img} alt={title} className='w-96 h-auto hidden absolute rounded-lg z-30' />
@@ -64,7 +64,7 @@ interface ArticleProps {
 const Article = ({img, title, date, link}: ArticleProps) => {
 
   return (
-    <motion.li initial={{y: 200}} whileInView={{ y: 0, transition: {duration: 0.5, ease: "easeInOut"} }} viewport={{once: true}} className='relative w-full px-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-custom-300 border-r-4 border-b-4'>
+    <motion.li initial={{y: 200}} whileInView={{ y: 0, transition: {duration: 0.5, ease: "easeInOut"} }} viewport={{once: true}} className='relative w-full px-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-custom-300 border-r-4 border-b-4 dark:bg-dark dark:border-custom'>
       <MovingImg title={title} img={img} link={link} />
       <span className='text-custom font-semibold pl-4'>{date}</span>
     </motion.li>
@@ -82,12 +82,12 @@ interface FeaturedArticlesProps {
 const FeaturedArticles = ({img, title, time, summary, link}:FeaturedArticlesProps) => {
 
   return (
-    <li className='col-span-1 w-full p-4 bg-light border border-solid border-custom-300 rounded-2xl'>
+    <li className='col-span-1 w-full p-4 bg-light border border-solid border-custom-300 rounded-2xl dark:bg-dark dark:border-custom dark:shadow-none'>
       <Link href={link} target='_blank' className='w-full inline-block cursor-pointer overflow-hidden rounded-lg mb-2'>
-        <Image src={img} alt='article' className='transition hover:scale-105' />
+        <Image src={img} alt='article' className='transition hover:scale-105' priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" />
       </Link>
       <Link href={link} target='_blank'>
-        <h2 className='capitalize text-2xl font-bold py-2 pt-4 border-t border-custom-300 hover:underline'>{title}</h2>
+        <h2 className='capitalize text-2xl font-bold py-2 pt-4 border-t border-custom-300 hover:underline dark:border-custom'>{title}</h2>
       </Link>
       <p className='text-sm mb-2'>
         {summary}

@@ -51,7 +51,7 @@ const useThemeSwitcher = () => {
             localStorage.setItem("theme", "dark");
             document.documentElement.classList.add("dark");
 
-        } else {
+        } else if (mode === "light") {
             localStorage.setItem("theme", "light");
             document.documentElement.classList.remove("dark");
         }

@@ -110,7 +110,7 @@ const About = () => {
                     <div className='absolute top-0 -right-2 -z-10 w-[102%] h-[103%] rounded-[1rem] bg-custom-400' />
                     <div className='absolute top-1 -right-3 -z-20 w-[102%] h-[103%] rounded-[1rem] bg-custom-500' />
                     <div className='absolute top-2 -right-4 -z-30 w-[102%] h-[103%] rounded-[1rem] bg-custom-800' />
-                    <MotionImage variants={imageAnimate} src={profilePic} priority={true} alt='dev' className='w-full h-auto rounded-2xl' />
+                    <MotionImage variants={imageAnimate} src={profilePic} priority={true} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt='dev' className='w-full h-auto rounded-2xl' />
                 </motion.div>
 
                 <div className='col-span-2 flex flex-col items-end justify-between'>

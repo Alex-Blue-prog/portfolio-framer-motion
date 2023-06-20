@@ -2,7 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority'
 import * as React from 'react'
 
 const buttonVariants = cva(
-  'active:scale-95 text-lg font-medium inline-flex items-center justify-center rounded-md border-2 border-transparent focus:ring-2 ring-offset-2 ring-custom-300 transition disabled:opacity-50',
+  'active:scale-95 text-lg font-medium inline-flex items-center justify-center rounded-md border-2 border-transparent focus:ring-2 ring-offset-2 ring-custom-300 transition disabled:opacity-50 sm:h-8 sm:px-2 sm:text-sm',
   {
     variants: {
       btncolor: {

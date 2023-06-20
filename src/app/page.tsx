@@ -11,21 +11,21 @@ import { buttonVariants } from "@/components/ui/Button";
 
 export default function Home() {
   return (
-    <main className="flex items-center w-full" style={{minHeight: "calc(100vh - 86px)"}}>
+    <main className="flex items-center w-full min-h-[calc(100vh-80px)] lg:min-h-[100vh-74px] py-8 sm:py-6" >
   
-        <div className="flex items-center justify-between h-full w-full">
+        <div className="flex items-center justify-between h-full w-full lg:flex-col">
 
-          <div className="w-[65%] flex flex-col items-center">
-            <AnimatedText className="!text-5xl !text-left">
+          <div className="w-[65%] flex flex-col items-center lg:w-full">
+            <AnimatedText className="!text-5xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-2xl">
               Turning Vision Into Reality With Code And Design
             </AnimatedText>
-            <p className="my-4 text-base font-medium">
+            <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
               As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. 
               Explore my latest projects and articles, showcasing my expertise in React.js and web development.
             </p>
-            <div className="self-start mt-2  flex items-center">
+            <div className="self-start mt-2 flex items-center lg:self-center">
               <Link href={"/dummy.pdf"} target="_blank" download={true} className={buttonVariants()} >
-                Resume <LinkArrow className="w-6 ml-1" />
+                Resume <LinkArrow className="w-6 ml-1 sm:w-4" />
               </Link>
               <Link href={"mailto:hatealex100@gmail.com"} target="_blank" className={buttonVariants({btncolor: "underline", className: "ml-4"})}>
                 Contact
@@ -33,8 +33,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-[35%]">
-            <Image priority={true} src={profilePic} alt="CodeBucks" className="w-full h-auto" />
+          <div className="w-[35%] lg:hidden md:block md:w-2/3 sm:w-full md:-order-1">
+            <Image priority={true} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" src={profilePic} alt="CodeBucks" className="w-full h-auto" />
           </div>
 
         </div>

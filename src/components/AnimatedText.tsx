@@ -43,16 +43,18 @@ const AnimatedText:FC<Props> = ({children, className=""}) => {
     let text = children as string;
 
   return (
-    <div className={`w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden`}>
+    <div className={`w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden sm:py-0`}>
+
         <motion.h1 variants={quote} initial="initial" animate={"animate"} className={`inline-block w-full text-dark dark:text-light font-bold capitalize text-8xl ${className}`}>
             {
                 text.split(" ").map((word, index) => 
-                    <motion.span variants={singleWord} key={index} className='inline-block mt-2'>
+                    <motion.span variants={singleWord} key={index} className='inline-block mt-2 sm:mt-0'>
                         {word}&nbsp;
                     </motion.span>
                 )
             }
         </motion.h1>
+
     </div>
   )
 }
