@@ -9,10 +9,12 @@ import { LinkArrow } from "@/components/Icons";
 import HireMe from "@/components/HireMe";
 import { buttonVariants } from "@/components/ui/Button";
 import AnimatedTitle from "@/components/ui/AnimatedTitle";
+import TransitionEffect from "@/components/TransitionEffect";
 
 export default function Home() {
   return (
     <main className="flex items-center w-full min-h-[calc(100vh-96px)] lg:min-h-[calc(100vh-74px)] md:py-8 sm:py-6" >
+        <TransitionEffect />
   
         <div className="flex items-center justify-between h-full w-full lg:flex-col">
 

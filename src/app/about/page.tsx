@@ -12,6 +12,7 @@ import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
 import AnimatedTitle from '@/components/ui/AnimatedTitle'
+import TransitionEffect from '@/components/TransitionEffect'
 
 // image animation
 const MotionImage = motion(Image);
