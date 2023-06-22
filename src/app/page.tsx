@@ -8,17 +8,21 @@ import AnimatedText from "@/components/AnimatedText";
 import { LinkArrow } from "@/components/Icons";
 import HireMe from "@/components/HireMe";
 import { buttonVariants } from "@/components/ui/Button";
+import AnimatedTitle from "@/components/ui/AnimatedTitle";
 
 export default function Home() {
   return (
-    <main className="flex items-center w-full min-h-[calc(100vh-80px)] lg:min-h-[100vh-74px] py-8 sm:py-6" >
+    <main className="flex items-center w-full min-h-[calc(100vh-96px)] lg:min-h-[calc(100vh-74px)] md:py-8 sm:py-6" >
   
         <div className="flex items-center justify-between h-full w-full lg:flex-col">
 
           <div className="w-[65%] flex flex-col items-center lg:w-full">
-            <AnimatedText className="!text-5xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-2xl">
+            {/* <AnimatedText className="!text-5xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-2xl">
               Turning Vision Into Reality With Code And Design
-            </AnimatedText>
+            </AnimatedText> */}
+            <AnimatedTitle>
+              Turning Vision Into Reality With Code And Design
+            </AnimatedTitle>
             <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
               As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. 
               Explore my latest projects and articles, showcasing my expertise in React.js and web development.

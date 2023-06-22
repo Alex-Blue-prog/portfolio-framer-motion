@@ -17,7 +17,7 @@ const DetailsItem = ({title, company, companyLink, time, addressOrPlace, info}: 
     const ref = useRef(null);
   
     return (
-      <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
+      <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]'>
 
         {/* animated circle svg */}
         <LiIcon reference={ref} />
@@ -29,13 +29,13 @@ const DetailsItem = ({title, company, companyLink, time, addressOrPlace, info}: 
           viewport={{once: true}}
         >
 
-          <h3 className='capitalize font-bold text-2xl mb-1'>
+          <h3 className='capitalize font-bold text-2xl mb-1 sm:text-xl xs:text-lg'>
             {title} &nbsp; {company && companyLink && <a href={companyLink} className='text-custom capitalize font-medium' target='_blank'>@{company}</a>}
           </h3>
-          <span className='capitalize font-medium text-sm text-dark/75 dark:text-light/75'>
+          <span className='capitalize font-medium text-sm text-dark/75 dark:text-light/75 xs:text-sm'>
             {time} | {addressOrPlace}
           </span>
-          <p className='font-medium w-full mt-2'>
+          <p className='font-medium w-full mt-2 md:text-sm'>
             {info}
           </p>
 

@@ -10,6 +10,8 @@ import article1 from "@/../public/images/articles/pagination component in reactj
 import article2 from "@/../public/images/articles/What is higher order component in React.jpg"
 import article3 from "@/../public/images/articles/create modal component in react using react portals.png"
 import { motion, useMotionValue } from 'framer-motion'
+import AnimatedTitle from '@/components/ui/AnimatedTitle'
+import Title from '@/components/ui/Title'
 
 const FramerImage = motion(Image);
 
@@ -49,7 +51,7 @@ const MovingImg = ({title, img, link}: MovingImgProps) => {
       <h2 className='capitalize text-lg font-semibold hover:underline dark:text-light'>
         {title}
       </h2>
-      <FramerImage style={{x: x, y: y}} initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 0.2}}} ref={imgRef} src={img} alt={title} className='w-96 h-auto hidden absolute rounded-lg z-30' />
+      <FramerImage style={{x: x, y: y}} initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 0.2}}} ref={imgRef} src={img} alt={title} className='w-96 h-auto hidden absolute rounded-lg z-30 md:!hidden' />
     </Link>
   )
 }
@@ -64,9 +66,9 @@ interface ArticleProps {
 const Article = ({img, title, date, link}: ArticleProps) => {
 
   return (
-    <motion.li initial={{y: 200}} whileInView={{ y: 0, transition: {duration: 0.5, ease: "easeInOut"} }} viewport={{once: true}} className='relative w-full px-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-custom-300 border-r-4 border-b-4 dark:bg-dark dark:border-custom'>
+    <motion.li initial={{y: 200}} whileInView={{ y: 0, transition: {duration: 0.5, ease: "easeInOut"} }} viewport={{once: true}} className='relative w-full px-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-custom-300 border-r-4 border-b-4 dark:bg-dark dark:border-custom sm:flex-col'>
       <MovingImg title={title} img={img} link={link} />
-      <span className='text-custom font-semibold pl-4'>{date}</span>
+      <span className='text-custom font-semibold pl-4 sm:self-start sm:pl-0 xs:text-sm sm:mt-4'>{date}</span>
     </motion.li>
   )
 }
@@ -87,9 +89,9 @@ const FeaturedArticles = ({img, title, time, summary, link}:FeaturedArticlesProp
         <Image src={img} alt='article' className='transition hover:scale-105' priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" />
       </Link>
       <Link href={link} target='_blank'>
-        <h2 className='capitalize text-2xl font-bold py-2 pt-4 border-t border-custom-300 hover:underline dark:border-custom'>{title}</h2>
+        <h2 className='capitalize text-2xl font-bold py-2 pt-4 border-t border-custom-300 hover:underline dark:border-custom xs:text-lg xs:pb-4'>{title}</h2>
       </Link>
-      <p className='text-sm mb-2'>
+      <p className='text-sm mb-2 xs:mb-4'>
         {summary}
       </p>
       <span className='text-custom font-semibold'>
@@ -109,9 +111,13 @@ const ArticlesPage = () => {
     <main className='w-full flex flex-col items-center justify-center'>
       <div className='pt-16 pb-16'>
 
-        <AnimatedText className='mb-16'>Words Can Change The World!</AnimatedText>
+        {/* <AnimatedText className='mb-16'>Words Can Change The World!</AnimatedText> */}
 
-        <ul className='grid grid-cols-2 gap-16'>
+        <AnimatedTitle size={"big"} className='mb-16 text-center sm:mb-8'>
+              Imagination Trumps knowledge!
+        </AnimatedTitle>
+
+        <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
           <FeaturedArticles
             title='Build A Custom Pagination Component In Reactjs from Scratch'
             summary='Learn how to build a custom pagination component in ReactJs from scratch.'
@@ -127,8 +133,11 @@ const ArticlesPage = () => {
             img={article2}
           />
         </ul>
-
-        <h2 className='font-bold text-4xl w-full text-center my-16 mt-32'>All Articles</h2>
+{/* 
+        <h2 className='font-bold text-4xl w-full text-center my-16 mt-32'>All Articles</h2> */}
+        <Title size={'md'} className='text-center my-16 mt-32'>
+          All Articles
+        </Title>
 
         <ul>
           <Article

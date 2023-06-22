@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} font-mont bg-light dark:bg-dark dark:text-light transition-colors duration-200`}>
         <Navbar />
-          <div className='w-full px-32 xl:px-24 lg:px-16 md:px-12 sm:px-8  min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-74px)]'>
+          <div className='w-full px-32 xl:px-24 lg:px-16 md:px-12 sm:px-8  min-h-[calc(100vh-96px)] lg:min-h-[calc(100vh-74px)]'>
             {children}
           </div>
         <Footer />

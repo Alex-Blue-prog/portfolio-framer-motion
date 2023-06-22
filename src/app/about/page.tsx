@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
+import AnimatedTitle from '@/components/ui/AnimatedTitle'
 
 // image animation
 const MotionImage = motion(Image);
@@ -81,10 +82,10 @@ const About = () => {
     <main className='flex w-full flex-col items-center justify-center'>
         <div className='pt-16 pb-0'>
 
-            <AnimatedText className='!text-6xl !mb-16'>Passion Fuels Purpose!</AnimatedText>
+            <AnimatedTitle size={"md"} className='mb-16 text-center sm:mb-8'>Passion Fuels Purpose!</AnimatedTitle>
 
-            <div className='w-full grid grid-cols-8 gap-16'>
-                <div className='col-span-3 flex flex-col items-start justify-start'>
+            <div className='w-full grid grid-cols-8 gap-16 md:gap-x-0'>
+                <div className='col-span-3 flex flex-col items-start justify-start lg:col-span-4 md:col-span-8'>
 
                     <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>
                         Biography
@@ -104,31 +105,31 @@ const About = () => {
                         every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.
                     </p>
             
-                </div>
+                </div> 
 
-                <motion.div variants={imageContainer} initial="initial" animate="animate" className='col-span-3 relative h-max rounded-2xl border-2 border-gray-300 p-8 bg-light dark:bg-dark'>
+                <motion.div variants={imageContainer} initial="initial" animate="animate" className='col-span-3 relative h-max rounded-2xl border-2 border-gray-300 p-8 bg-light dark:bg-dark lg:col-span-4 md:col-start-2 md:col-span-6 xs:col-span-8'>
                     <div className='absolute top-0 -right-2 -z-10 w-[102%] h-[103%] rounded-[1rem] bg-custom-400' />
                     <div className='absolute top-1 -right-3 -z-20 w-[102%] h-[103%] rounded-[1rem] bg-custom-500' />
                     <div className='absolute top-2 -right-4 -z-30 w-[102%] h-[103%] rounded-[1rem] bg-custom-800' />
                     <MotionImage variants={imageAnimate} src={profilePic} priority={true} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt='dev' className='w-full h-auto rounded-2xl' />
                 </motion.div>
 
-                <div className='col-span-2 flex flex-col items-end justify-between'>
-                    <div className='flex flex-col items-end justify-center'>
-                        <span className='inline-block text-7xl font-bold text-custom-800'><AnimatedNumbers value={50} />+</span>
-                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>satisfied clients</h2>
+                <div className='col-span-2 flex flex-col items-end justify-between lg:col-span-8 lg:flex-row sm:flex-col sm:gap-4 md:mt-6'>
+                    <div className='flex flex-col items-end justify-center sm:border-b sm:border-custom-200 sm:w-full pb-4 sm:items-center'>
+                        <span className='inline-block text-7xl font-bold text-custom-800 md:text-5xl'><AnimatedNumbers value={50} />+</span>
+                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 lg:mt-4 md:text-lg text-end sm:mt-2'>satisfied clients</h2>
                     </div>
 
-                    <div className='flex flex-col items-end justify-center'>
-                        <span className='inline-block text-7xl font-bold text-custom-500'><AnimatedNumbers value={40} />+</span>
-                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>projects completd</h2>
+                    <div className='flex flex-col items-end justify-center sm:border-b sm:border-custom-200 sm:w-full pb-4 sm:items-center'>
+                        <span className='inline-block text-7xl font-bold text-custom-500 md:text-5xl'><AnimatedNumbers value={40} />+</span>
+                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 lg:mt-4 md:text-lg text-end sm:mt-2'>projects completd</h2>
                     </div>
 
-                    <div className='flex flex-col items-end justify-cente'>
-                        <span className='inline-block text-7xl font-bold text-custom-400'><AnimatedNumbers value={4} />+</span>
-                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>years of experience</h2>
+                    <div className='flex flex-col items-end justify-center sm:border-b sm:border-custom-200 sm:w-full pb-4 sm:items-center'>
+                        <span className='inline-block text-7xl font-bold text-custom-400 md:text-5xl'><AnimatedNumbers value={4} />+</span>
+                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 lg:mt-4 md:text-lg text-end sm:mt-2'>years of experience</h2>
                     </div>
-                </div>
+                </div> 
 
             </div>  
 
