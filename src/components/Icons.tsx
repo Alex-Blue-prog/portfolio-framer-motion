@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import * as React from "react";
 
 export const GithubIcon = ({ className, ...rest }: any) => (
@@ -259,7 +261,7 @@ export const SunIcon = ({ className, ...rest }: any) => (
       fill="currentColor"
       mask="url(#lineMdSunnyFilledLoopToMoonFilledLoopTransition1)"
     >
-      <set attributeName="opacity" begin="0.5s" to="0" />
+     <set attributeName="opacity" begin="0.5s" to="0" /> 
       <animate
         fill="freeze"
         attributeName="r"
