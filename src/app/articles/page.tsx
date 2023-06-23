@@ -1,6 +1,5 @@
 "use client"
 
-import AnimatedText from '@/components/AnimatedText'
 import { Metadata } from 'next'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
