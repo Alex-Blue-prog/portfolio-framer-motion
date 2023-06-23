@@ -100,10 +100,10 @@ const FeaturedArticles = ({img, title, time, summary, link}:FeaturedArticlesProp
   )
 }
 
-export const metadata: Metadata = {
-  title: "Alex F. | Articles",
-  description: "Check out my articles and learn about web development"
-}
+// export const metadata: Metadata = {
+//   title: "Alex F. | Articles",
+//   description: "Check out my articles and learn about web development"
+// }
 
 const ArticlesPage = () => {
   return (
